@@ -1,0 +1,20 @@
+<h1>this is new comp</h1>
+<button class="btn btn-primary" (click)="changeName()">Change Name</button>
+<button class="btn btn-primary ms-2" (click)="changeName2()">
+  Change Name
+</button>
+<p *ngIf="temp.length > 0">i am here</p>
+
+<p>My name is {{ name }} and my age is {{ age }}</p>
+
+<!-- <input type="text" class="form-control-lg w-50" (input)="tempfunc($event)" /> -->
+<input type="text" class="form-control-lg w-50" [(ngModel)]="temp" />
+<button
+  [disabled]="temp === ''"
+  class="btn btn-primary btn-lg ms-2"
+  (click)="temp = ''"
+>
+  testing
+</button>
+
+<p class="text-danger">{{ temp }}</p>
