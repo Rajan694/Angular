@@ -17,6 +17,7 @@
         [srvElement]="serverElement"
         [name]="serverElement.name"
       >
+        <!-- following is shown because to ng-content on (child of this) -->
         <p #contentParagraph>
           <strong *ngIf="serverElement.type === 'server'" style="color: red">{{
             serverElement.content
@@ -26,6 +27,21 @@
           }}</em>
         </p>
       </app-server-element>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <app-gamecontrol
+        (intervalfired)="onintervalfired($event)"
+      ></app-gamecontrol>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6">
+      <app-odd *ngFor="let odd of oddNumbers" [number]="odd"></app-odd>
+    </div>
+    <div class="col-6">
+      <app-even *ngFor="let even of evenNumbers" [number]="even"></app-even>
     </div>
   </div>
 </div>
