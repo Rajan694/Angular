@@ -1,4 +1,9 @@
-<a href="#" class="list-group-item mb-3 border" (click)="onSelected()">
+<a
+  class="list-group-item mb-2 border rounded active"
+  style="cursor: pointer"
+  [routerLink]="[index]"
+  routerLinkActive="active"
+>
   <li class="list-group-item d-flex justify-content-between align-items-start">
     <div class="ms-2 me-auto">
       <div class="fw-bold">{{ recipe.name }}</div>

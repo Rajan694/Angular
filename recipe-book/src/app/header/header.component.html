@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-sm navbar-light bg-light mb-3">
   <div class="container">
-    <a class="navbar-brand" href="#">Recipe Book</a>
+    <a class="navbar-brand" routerLink="/">Recipe Book</a>
     <button
       class="navbar-toggler"
       data-toggle="collapse"
@@ -11,10 +11,16 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="#" (click)="onSelect('recipe')">Recipes</a>
+          <a class="nav-link" routerLinkActive="active" routerLink="/recipes"
+            >Recipes</a
+          >
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#" (click)="onSelect('shopping-list')">
+          <a
+            class="nav-link"
+            routerLinkActive="active"
+            routerLink="/shopping-list"
+          >
             Shopping List
           </a>
         </li>
@@ -24,7 +30,6 @@
         <li class="nav-item dropdown">
           <a
             class="nav-link dropdown-toggle"
-            href="#"
             id="navbarDropdownMenuLink"
             role="button"
             data-bs-toggle="dropdown"
@@ -33,8 +38,12 @@
             Manage
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Save Data</a></li>
-            <li><a class="dropdown-item" href="#">Fetch Data</a></li>
+            <li>
+              <a class="dropdown-item" style="cursor: pointer">Save Data</a>
+            </li>
+            <li>
+              <a class="dropdown-item" style="cursor: pointer">Fetch Data</a>
+            </li>
           </ul>
         </li>
       </ul>

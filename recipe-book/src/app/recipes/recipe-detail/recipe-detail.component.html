@@ -28,12 +28,17 @@
             class="dropdown-item"
             style="cursor: pointer"
             (click)="onAddtoShoppingList()"
-            href="#"
             >Add to Shopping-list</a
           >
         </li>
-        <li><a class="dropdown-item" href="">Delete Recipe</a></li>
-        <li><a class="dropdown-item" href="">Edit recipe</a></li>
+        <li>
+          <a class="dropdown-item" style="cursor: pointer">Delete Recipe</a>
+        </li>
+        <li>
+          <a class="dropdown-item" style="cursor: pointer" (click)="onEditRecipe()"
+            >Edit recipe</a
+          >
+        </li>
       </ul>
     </div>
   </div>
