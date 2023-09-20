@@ -1,0 +1,13 @@
+<div class="container">
+  <h2>hii my name is {{ name }} and my age is {{ age }}</h2>
+
+  <input type="text" class="form-control" [(ngModel)]="gender" />
+  <h3>{{ gender }}</h3>
+  <div [class]="gender">temp div</div>
+  <button class="btn btn-primary" (click)="aler(gender)">click</button>
+  <input type="text" class="form-control" #name (input)="aler(name.value)" />
+  <hr />
+  <button class="btn btn-danger" (click)="counter('minus')">-</button>
+  {{ count }}
+  <button class="btn btn-success" (click)="counter('plus')">+</button>
+</div>
