@@ -1,14 +1,24 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
 import { Observable } from 'rxjs';
+
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  selector: 'app-forms',
+  templateUrl: './forms.component.html',
+  styleUrls: ['./forms.component.css'],
 })
-export class AppComponent {
-  //Reactive form
-  //////////////////////////////////////////////////////////////////////////////////////////////////
+export class FormsComponent {
+  // Template forms
+  ///////////////////////////////////////////////////////////////////////////////////////////
+  subscriptions = ['basic', 'advanced', 'intermediate'];
+  defaultSubscription = 'basic';
+
+  onSubmit1(form: any) {
+    console.log(form.value);
+  }
+
+  // Reactive Forms
+  ////////////////////////////////////////////////////////////////////////////////////////////
   signUpForm: FormGroup;
   forbiddenUserNames = ['Chris', 'Anna'];
 
@@ -55,10 +65,10 @@ export class AppComponent {
     return null;
   }
 
-  forbiddenEmails(control: FormControl): Promise<any> | Observable<any> {
+  forbiddenEmails(control: FormControl): Promise<any> {
     const promise = new Promise<any>((resolve, reject) => {
       setTimeout(() => {
-        if (control.value === 'test@example.com') {
+        if (control.value === 'test@test.com') {
           resolve({ emailIsForbidden: true });
         } else {
           resolve(null);
@@ -66,55 +76,5 @@ export class AppComponent {
       }, 1500);
     });
     return promise;
-  }
-  //template form
-  //////////////////////////////////////////////////////////////////////////////////////////////////
-  subscriptions = ['basic', 'advanced', 'intermediate'];
-  defaultSubscription = 'basic';
-
-  onSubmit1(form: any) {
-    console.log(form.value);
-  }
-
-  //////////////////////////////////////////////////////////////////////////////////////////////
-  serverElements = [
-    { type: 'server', name: 'Testserver', content: 'Just a test!' },
-  ];
-  oddNumbers: number[] = [];
-  evenNumbers: number[] = [];
-
-  onServerAdded(serverData: { serverName: string; serverContent: string }) {
-    this.serverElements.push({
-      type: 'server',
-      name: serverData.serverName,
-      content: serverData.serverContent,
-    });
-  }
-
-  onBlueprintAdded(blueprintData: {
-    serverName: string;
-    serverContent: string;
-  }) {
-    this.serverElements.push({
-      type: 'blueprint',
-      name: blueprintData.serverName,
-      content: blueprintData.serverContent,
-    });
-  }
-
-  onChangeFirst() {
-    this.serverElements[0].name = 'Changed!';
-  }
-
-  onDestroyFirst() {
-    this.serverElements.splice(0, 1);
-  }
-
-  onintervalfired(lastnumber: number) {
-    if (lastnumber % 2 === 0) {
-      this.evenNumbers.push(lastnumber);
-    } else {
-      this.oddNumbers.push(lastnumber);
-    }
   }
 }
