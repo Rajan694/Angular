@@ -1,4 +1,4 @@
-<!-- Template forms -->
+<!-- Template forms ------------------------------------------------------------------------------------------------>
 
 <div class="row">
   <div class="col-xs-12">
@@ -40,7 +40,7 @@
         <input
           type="password"
           class="form-control"
-          id="password"
+          id="password1"
           ngModel
           name="password"
           required
@@ -56,12 +56,14 @@
       <p *ngIf="!myForm.valid && myForm.touched" class="small text-danger">
         The form is invalid
       </p>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" class="btn btn-primary" [disabled]="!myForm.valid">
+        Submit
+      </button>
     </form>
   </div>
 </div>
 
-<!-- Reactive forms -->
+<!-- Reactive forms ---------------------------------------------------------------------------------------------------->
 <hr />
 <hr />
 <div class="row">
@@ -165,19 +167,25 @@
       </div>
       <div formGroupName="address">
         <div class="form-group">
-          <label for="address">Address</label>
+          <label for="address">Address</label><br />
+          <label for="city">City</label>
+
           <input
             type="text"
             class="form-control"
             id="city"
             formControlName="city"
           />
+          <label for="state">State</label>
+
           <input
             type="text"
             class="form-control"
             id="state"
             formControlName="state"
           />
+          <label for="postalCode">Postal Code</label>
+
           <input
             type="text"
             class="form-control"
@@ -218,7 +226,13 @@
           </button>
         </div>
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button
+        type="submit"
+        class="btn btn-primary"
+        [disabled]="signUpForm.invalid"
+      >
+        Submit
+      </button>
     </form>
   </div>
 </div>

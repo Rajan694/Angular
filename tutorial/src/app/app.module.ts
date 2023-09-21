@@ -7,6 +7,7 @@ import { TodoListComponent } from './todo-list/todo-list.component';
 import { Child1Component } from './child1/child1.component';
 import { UsdToinrPipe } from './pipes/usd-toinr.pipe';
 import { FormsComponent } from './forms/forms.component';
+import { AquaElDirective } from './aqua-el.directive';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { FormsComponent } from './forms/forms.component';
     Child1Component,
     UsdToinrPipe,
     FormsComponent,
+    AquaElDirective,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [],
