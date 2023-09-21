@@ -6,10 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  name = 'Angular';
+  name: string = 'Rajan';
   age = 25;
   gender = 'male';
   count = 0;
+  users = ['tony', 'jack', 'john'];
 
   ngOnInit() {
     console.log(this.gender);
@@ -19,6 +20,7 @@ export class AppComponent {
   }
   aler(val: string) {
     console.log(val);
+    alert(val);
   }
   // ngDoCheck() {
   //   console.log(this.gender);
