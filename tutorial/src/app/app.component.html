@@ -1,7 +1,16 @@
 <div class="container">
-  <app-child1></app-child1>
+  <div class="row">
+    <div class="col-md-10">
+      <app-child1
+        [item]="valuee"
+        (takedataevent)="takedata($event)"
+      ></app-child1>
+    </div>
+  </div>
 
+  <hr />
   <h2>hii my name is {{ name }} and my age is {{ age }}</h2>
+  <hr />
 
   <input type="text" class="form-control" [(ngModel)]="gender" />
   <h3>{{ gender }}</h3>
@@ -17,6 +26,7 @@
       naam hai : {{ user }}
     </li>
   </ul>
+  <hr />
   <div class="row">
     <div class="col-md-4">
       <!-- <app-todo-list></app-todo-list> -->

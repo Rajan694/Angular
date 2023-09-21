@@ -11,6 +11,11 @@ export class AppComponent {
   gender = 'male';
   count = 0;
   users = ['tony', 'jack', 'john'];
+  valuee = 10;
+
+  takedata(item: string) {
+    console.warn(item);
+  }
 
   ngOnInit() {
     console.log(this.gender);
