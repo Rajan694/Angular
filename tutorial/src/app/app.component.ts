@@ -6,27 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  name: string = 'Rajan';
-  age = 25;
-  gender = 'male';
-  count = 0;
-  users = ['tony', 'jack', 'john'];
   valuee = 10;
 
   takedata(item: string) {
     console.warn(item);
   }
 
-  ngOnInit() {
-    console.log(this.gender);
-  }
-  counter(type: string) {
-    type === 'plus' ? this.count++ : this.count--;
-  }
-  aler(val: string) {
-    console.log(val);
-    alert(val);
-  }
   // ngDoCheck() {
   //   console.log(this.gender);
   // }

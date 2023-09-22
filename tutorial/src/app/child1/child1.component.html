@@ -1,5 +1,36 @@
-<p>{{ item }}</p>
+<h4 appAquaEl>
+  hii my name is {{ name }} and my age is {{ age }} this is value from backside
+</h4>
+<br />
 
+<input
+  type="text"
+  class="form-control"
+  placeholder="two way binding"
+  [(ngModel)]="gender"
+/>
+<h4>{{ gender }}</h4>
+<div [class]="gender">dynamically sets class to this dev</div>
+<button class="btn btn-primary" (click)="aler(gender)">click event</button>
+<input
+  type="text"
+  class="form-control"
+  placeholder="taking name from it"
+  #nam
+  (input)="aler(nam.value)"
+/>
+<hr />
+<button class="btn btn-danger" (click)="counter('minus')">-</button>
+{{ count }}
+<button class="btn btn-success" (click)="counter('plus')">+</button>
+
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let user of users">
+    naam hai : {{ user }}
+  </li>
+</ul>
+<!-- ////////////////////////////////////////////////////////////////////////////// -->
+<p>data from parent to child - {{ item }}</p>
 <input
   type="text"
   class="form-control"
@@ -7,7 +38,7 @@
   #box
 />
 <button (click)="takedataevent.emit(box.value)">click</button>
-
+<h5>pipes</h5>
 <p>{{ name | uppercase }}</p>
 <p>{{ today | date : "short" }}</p>
 <p>{{ user | json | uppercase }}</p>

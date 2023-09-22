@@ -6,32 +6,13 @@
         (takedataevent)="takedata($event)"
       ></app-child1>
     </div>
-  </div>
-  <hr />
-  <app-forms></app-forms>
-
-  <hr />
-  <h2 appAquaEl>hii my name is {{ name }} and my age is {{ age }}</h2>
-  <hr />
-
-  <input type="text" class="form-control" [(ngModel)]="gender" />
-  <h3>{{ gender }}</h3>
-  <div [class]="gender">temp div</div>
-  <button class="btn btn-primary" (click)="aler(gender)">click</button>
-  <input type="text" class="form-control" #nam (input)="aler(nam.value)" />
-  <hr />
-  <button class="btn btn-danger" (click)="counter('minus')">-</button>
-  {{ count }}
-  <button class="btn btn-success" (click)="counter('plus')">+</button>
-  <ul class="list-group">
-    <li class="list-group-item" *ngFor="let user of users">
-      naam hai : {{ user }}
-    </li>
-  </ul>
-  <hr />
-  <div class="row">
+    <hr />
+    <div class="col-md-10">
+      <app-forms></app-forms>
+    </div>
+    <hr />
     <div class="col-md-4">
-      <!-- <app-todo-list></app-todo-list> -->
+      <app-todo-list></app-todo-list>
     </div>
   </div>
 </div>
