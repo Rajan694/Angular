@@ -12,6 +12,10 @@ import { Test1Component } from './test1/test1.component';
 import { Test2Component } from './test2/test2.component';
 import { Test11Component } from './test1/test11/test11.component';
 import { ObservableComponent } from './observable/observable.component';
+import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
+import { CoursesComponent } from './courses/courses.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +29,10 @@ import { ObservableComponent } from './observable/observable.component';
     Test2Component,
     Test11Component,
     ObservableComponent,
+    HomeComponent,
+    AboutComponent,
+    ContactComponent,
+    CoursesComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [],
