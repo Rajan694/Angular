@@ -1,4 +1,7 @@
 <div class="container">
+  <h1>wertyu</h1>
+  <h2 *ngIf="showLoading">Loading...</h2>
+
   <div class="row">
     <!-- <div class="col-md-10">
       <app-child1
@@ -6,14 +9,10 @@
         (takedataevent)="takedata($event)"
       ></app-child1>
     </div>
+ 
+    
     <hr />
-    <div class="col-md-10">
-      <app-forms></app-forms>
-    </div>
-    <hr />
-    <div class="col-md-4">
-      <app-todo-list></app-todo-list>
-    </div> 
+    
     <div class="col-md-12">
       <ul class="list-group list-group-flush">
         <li class="list-group-item">
@@ -96,6 +95,10 @@
                 >
               </li>
             </ul>
+            <div class="nav-item">
+              <button class="btn btn-primary" (click)="login()">Login</button>
+              <button class="btn btn-danger" (click)="logout()">Logout</button>
+            </div>
           </div>
         </div>
       </nav>
